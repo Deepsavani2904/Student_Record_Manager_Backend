@@ -66,10 +66,10 @@ const login = async (req, res) => {
     return res
       .status(200)
       .cookie("accessToken", token, {
-        httpOnly: false,
+        httpOnly: true, 
         maxAge: 24 * 60 * 60 * 1000,
         secure: true,
-        sameSite: "strict",
+        sameSite: "none",
       })
       .json({
         success: true,
